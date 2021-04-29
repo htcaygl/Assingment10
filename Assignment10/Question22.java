@@ -13,9 +13,12 @@ public class Question22 {
 
 		if(word.contains("<html>"))
 		{
-			int n=word.indexOf("id=\"");	
+			int n=word.indexOf("id=\"");
+			int m=word.indexOf("\"", n+4);
+			
+			System.out.println(m+" "+n);
 						
-			System.out.println(word.substring(n+4));
+			System.out.println(word.substring(n+4,m));
 		}
 		
 		
