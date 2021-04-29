@@ -1,11 +1,10 @@
-package assignment10;
+package Self;
 
 import java.util.Scanner;
 
 public class Question21 {
 
 	public static void main(String[] args) {
-
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter word: ");
 		String word = scan.next();
@@ -14,36 +13,22 @@ public class Question21 {
 
 		scan.close();
 
-		String con = "";
-		String c = "";
-
-		for (int i = 0; i < num; i++) {
-
-			con += word.charAt(i);
-		}
-
-		//System.out.println(con);
 		int count = 0;
+		String again = word.substring(0, num);
 
-		while (word.contains(con)) {			
-			word = word.replaceFirst(con, "");
+		while (word.contains(again)) {
+			word = word.replaceFirst(again, "");
 			count++;
 		}
 
-		if (count == 1) {
-			System.out.println(false);
-			System.out.println(con + " appears once only");
-
+		if (count != 1) {
+			System.out.println(true);
+			System.out.println(again + " appears " + count + " times");
 		} else {
-			System.out.println(count);
-			if (count == 2) 
-				c = "twice";
-			else if (count == 3) {
-				c = "three times";
-				
-			}
-			System.out.println(con +" appears "+ c);
+			System.out.println(false);
+			System.out.println(again + " appears once only");
 		}
+
 	}
 
 }
